@@ -1,30 +1,29 @@
-import java.awt.*;
-import java.io.IOException;
-import java.util.*;
-import java.util.List;
+import java.util.ArrayList;
 
-public class test {
+public class test{
     public static void main(String[] args) {
-        //int[] arr = {7, 25, 3, 38, 0, 0, 0, 0, 1, 3, 13};  90
-        //int[] arr = {25, 1, 6, 0, 3, 14, 93}; 142
-        int[] arr = {9, 36, 26, 5, 15, 13, 7, 0, 2, 29, 39, 7, 2, 23};
-        int N = arr.length;
-        int remainder = 0;
-        int possible = arr[0];
-        int possibleIndex = 1;
-        for (int i = 0; i < N; i++) {
-            if (remainder + arr[i] > possible || i == N-1 && remainder + arr[i] != possible) {
-                possible += arr[possibleIndex];
-                possibleIndex++;
-                remainder = 0;
-                i = -1;
-            } else if (remainder + arr[i] == possible) {
-                remainder = 0;
-            } else {
-                remainder += arr[i];
-            }
+        String str = "MMO";
+        if(str.contains("MOO")){
+            System.out.println(str.length() - 3);
+
         }
-        System.out.println(possible);
+        String str1 = str.substring(1);
+        if(str1.contains("OO")){
+            System.out.println(str.length() - 2);
+
+        }
+        String str2 = str.substring(0, str.length()-1);
+        if(str1.contains("MO")){
+            System.out.println(str.length() - 2);
+
+        }
+        String str3 = str.substring(1, str.length()-1);
+        if(str.length() < 3 || !str3.contains("O")){
+            System.out.println(-1);
+
+        } else{
+            if(str.equals("OOM")) System.out.println(2);
+            else if(str.equals("OOMO")) System.out.println(3);
+        }
     }
 }
-
